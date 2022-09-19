@@ -21,25 +21,19 @@ class LogictestsController extends Controller
         return response()->json($logictests, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    
+    // public function create()
+    // {
+    //   return view('createlogictest');
+    // }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $logictest = request()->except('_token');
+        Logictest::create($logictest);
+
+        return redirect()->json($logictest, 500);
     }
 
     /**

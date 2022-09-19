@@ -13,3 +13,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', [LogictestsController::class, 'index'])->name('logictestApi');
 
 Route::delete('/delete/{id}', [LogictestsController::class, 'destroy'])->name('destroylogictestApi');
+
+Route::get('/create', [LogictestsController::class, 'create'])->name('createlogictestApi');
+
+Route::post('/store',[LogictestsController::class, 'store'])->name('storelogictestApi');
