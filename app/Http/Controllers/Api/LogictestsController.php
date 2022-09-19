@@ -85,5 +85,8 @@ class LogictestsController extends Controller
     public function destroy($id)
     {
         //
+        $event =Logictest::find($id);
+        $event->delete();
+
     }
 }
