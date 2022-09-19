@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LogicTest extends Model
+class Logictest extends Model
 {
     use HasFactory;
-
-   protected $fillable=[
-    'name',
-    'statement',
-    'question',
-    'result',
-    'clue',
-    'image'
-   ];
+    protected $fillable = [
+        'name',
+        'statement',
+        'question',
+        'result',
+        'clue',
+        'image',
+    ]; 
 }
