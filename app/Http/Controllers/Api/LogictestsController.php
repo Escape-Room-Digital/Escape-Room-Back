@@ -30,10 +30,15 @@ class LogictestsController extends Controller
    
     public function store(Request $request)
     {
-        $logictest = request()->except('_token');
-        Logictest::create($logictest);
-
-        return redirect()->json($logictest, 500);
+      $request->validate([
+            'name'=>'required',
+            'statement'=>'required',
+            'question'=>'required',
+            'result'=>'required',
+            'clue'=>'required',
+            'image'=> 'required',
+        ]); 
+      return Logictest::create($request->all());
     }
 
     /**
