@@ -21,4 +21,20 @@ class LogictestCrudTest extends TestCase
         ->assertJsonCount(2);
 
     }
+
+    public function test_check_If_Logictests_Are_deleted_In_Json_File(){
+
+      Logictest::factory(2)->create();
+
+      $response = $this->get(route('logictestApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(2);
+
+      $response = $this->delete(route('destroylogictestApi', 1));
+      
+      $response = $this->get(route('logictestApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+
+    }
 }
