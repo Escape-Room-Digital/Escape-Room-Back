@@ -22,4 +22,4 @@ Route::get('/edit/{id}',[LogictestsController::class, 'edit'])->name('editlogict
 
 Route::patch('/update/{id}',[LogictestsController::class, 'update'])->name('updateLogictest');
 
-/* Route::get('/show/{id}',[LogictestsController::class, 'show'])->name('showlogictestApi'); */
+Route::get('/show/{id}',[LogictestsController::class, 'show'])->name('showlogictestApi');

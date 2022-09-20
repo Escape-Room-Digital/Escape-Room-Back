@@ -49,8 +49,8 @@ class LogictestsController extends Controller
      */
     public function show($id)
     {
-       /*  $logictest = Logictest::find($id);
-        return  $logictest; */
+        $logictest = Logictest::find($id);
+        return  $logictest;
     }
 
     /**
