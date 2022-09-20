@@ -17,3 +17,9 @@ Route::delete('/delete/{id}', [LogictestsController::class, 'destroy'])->name('d
 Route::get('/create', [LogictestsController::class, 'create'])->name('createlogictestApi');
 
 Route::post('/store',[LogictestsController::class, 'store'])->name('storelogictestApi');
+
+Route::get('/edit/{id}',[LogictestsController::class, 'edit'])->name('editlogictestApi');
+
+Route::patch('/update/{id}',[LogictestsController::class, 'update'])->name('updateLogictest');
+
+/* Route::get('/show/{id}',[LogictestsController::class, 'show'])->name('showlogictestApi'); */

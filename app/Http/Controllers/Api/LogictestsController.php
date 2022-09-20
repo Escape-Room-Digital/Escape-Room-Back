@@ -49,7 +49,8 @@ class LogictestsController extends Controller
      */
     public function show($id)
     {
-        //
+       /*  $logictest = Logictest::find($id);
+        return  $logictest; */
     }
 
     /**
@@ -60,7 +61,9 @@ class LogictestsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $logictest = Logictest::find($id);
+        
+        /*  return view('editLogictest',compact('logictest')); */
     }
 
     /**
@@ -72,7 +75,10 @@ class LogictestsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $logictest= Logictest::where('id', '=',$id)->update($request->all());
+        return redirect()->route('logictestApi');
+
     }
 
     /**
