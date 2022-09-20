@@ -82,5 +82,25 @@ class LogictestCrudTest extends TestCase
  
     }
 
+    public function test_check_if_a_logictest_can_be_show(){
+
+    $logictest = Logictest::factory()->create(
+      [
+      'name'=>'name',
+      'statement'=>'statement',
+      'question'=>'question',
+      'result'=>'result',
+      'clue'=>'clue',
+      'image'=> 'image',
+      ]
+    );
+    $response = $this->get(route('logictestApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+
+    $response=$this->get(route('showlogictestApi', $logictest->id));
+        $response->assertSee($logictest->name);
+  }
+
 
 }
