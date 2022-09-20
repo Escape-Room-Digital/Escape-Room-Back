@@ -55,7 +55,32 @@ class LogictestCrudTest extends TestCase
  
     }
 
+    public function test_check_if_a_logictest_can_be_updated(){
+ 
+      $logictest = Logictest::factory()->create();
+      $response = $this->get(route('logictestApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
 
+    //   $response = $this->patch(route('updateEvent', $event->id), [
+    //     'name' => 'updated name',
+    //     'description' => 'updated description',
+    //     'spaces' => '20',
+    //     'image' => 'updated image'
+    // ]);
+
+    $response=$this->patch(route('updateLogictest', $logictest->id), [
+      'name'=>'Gato',
+      'statement'=>'statement',
+      'question'=>'question',
+      'result'=>'result',
+      'clue'=>'clue',
+      'image'=> 'image',
+]);
+
+    $this->assertEquals('Gato', Logictest::first()->name);
+ 
+    }
 
 
 }
