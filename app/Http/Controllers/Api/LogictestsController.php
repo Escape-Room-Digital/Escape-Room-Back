@@ -49,16 +49,12 @@ class LogictestsController extends Controller
      */
     public function show($id)
     {
-        $logictest = Logictest::find($id);
+        $logicTest = [];
+        $logictest[0] = Logictest::find($id);
         return  $logictest;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         $logictest = Logictest::find($id);
