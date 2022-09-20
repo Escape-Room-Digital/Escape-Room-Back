@@ -38,6 +38,24 @@ class LogictestCrudTest extends TestCase
 
     }
 
+      public function test_check_if_a_logictest_can_be_created(){
+ 
+      $response=$this->post(route('storelogictestApi',[
+            'name'=>'name',
+            'statement'=>'statement',
+            'question'=>'question',
+            'result'=>'result',
+            'clue'=>'clue',
+            'image'=> 'image',
+      ]));
+ 
+      $response = $this->get(route('logictestApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+ 
+    }
+
+
 
 
 }
