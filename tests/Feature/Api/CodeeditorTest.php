@@ -21,4 +21,20 @@ class CodeeditorTest extends TestCase
         ->assertJsonCount(2);
 
     }
+
+    public function test_check_If_Codeeditor_Are_deleted_In_Json_File(){
+
+      Codeeditor::factory(2)->create();
+
+      $response = $this->get(route('codeeditorApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(2);
+
+      $response = $this->delete(route('destroycodeeditorApi', 1));
+      
+      $response = $this->get(route('codeeditorApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+
+    }
 }
