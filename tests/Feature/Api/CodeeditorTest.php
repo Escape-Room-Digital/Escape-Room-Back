@@ -52,6 +52,24 @@ class CodeeditorTest extends TestCase
  
     }
 
+
+    public function test_check_if_a_codeeditor_can_be_updated(){
+ 
+        $codeeditor = Codeeditor::factory()->create();
+        $response = $this->get(route('codeeditorApi'));
+        $response->assertStatus(200)
+          ->assertJsonCount(1);
+  
+      $response=$this->patch(route('updatecodeeditorApi', $codeeditor->id), [
+        'name'=>'Gato',
+        'statement'=>'statement',
+        'result'=>'result'      
+  ]);
+  
+      $this->assertEquals('Gato', Codeeditor::first()->name);
+   
+      }
+      
     public function test_check_if_a_codeeditor_can_be_show(){
 
     $codeeditor = Codeeditor::factory()->create();
@@ -60,5 +78,4 @@ class CodeeditorTest extends TestCase
     $response=$this->get(route('showcodeeditorApi', $codeeditor->id));
         $response->assertStatus(200)->assertSee("name")->assertJsonCount(1);
   }
-
 }

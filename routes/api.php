@@ -35,5 +35,8 @@ Route::get('/codeeditor/create', [CodeeditorController::class, 'create'])->name(
 
 Route::post('/codeeditor/store',[CodeeditorController::class, 'store'])->name('storecodeeditorApi');
 
-Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name('showcodeeditorApi');
+Route::get('/codeeditor/edit/{id}',[CodeeditorController::class, 'edit'])->name('editcodeeditorApi');
 
+Route::patch('/codeeditor/update/{id}',[CodeeditorController::class, 'update'])->name('updatecodeeditorApi');
+
+Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name('showcodeeditorApi');
