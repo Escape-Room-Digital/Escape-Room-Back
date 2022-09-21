@@ -97,7 +97,7 @@ class LogictestCrudTest extends TestCase
     $this->assertCount(1, Logictest::all());
     
     $response=$this->get(route('showlogictestApi', $logictest->id));
-        $response->assertStatus(200)->assertSee("hola")->assertJsonCount(1);
+        $response->assertStatus(200)->assertSee("name")->assertJsonCount(1);
   }
 
 
