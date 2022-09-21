@@ -29,5 +29,6 @@ Route::get('/logictest/show/{id}',[LogictestsController::class, 'show'])->name('
 //rutas de codeeditor:
 Route::get('/codeeditor', [CodeeditorController::class, 'index'])->name('codeeditorApi');
 
+Route::delete('/codeeditor/delete/{id}', [CodeeditorController::class, 'destroy'])->name('destroycodeeditorApi');
 
 
