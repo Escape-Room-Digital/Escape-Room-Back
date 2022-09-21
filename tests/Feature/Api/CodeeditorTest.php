@@ -51,4 +51,14 @@ class CodeeditorTest extends TestCase
         ->assertJsonCount(1);
  
     }
+
+    public function test_check_if_a_codeeditor_can_be_show(){
+
+    $codeeditor = Codeeditor::factory()->create();
+    $this->assertCount(1, Codeeditor::all());
+    
+    $response=$this->get(route('showcodeeditorApi', $codeeditor->id));
+        $response->assertStatus(200)->assertSee("name")->assertJsonCount(1);
+  }
+
 }
