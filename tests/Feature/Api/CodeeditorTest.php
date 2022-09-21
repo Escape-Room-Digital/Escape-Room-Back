@@ -37,4 +37,22 @@ class CodeeditorTest extends TestCase
         ->assertJsonCount(1);
 
     }
+
+    public function test_check_if_a_codeeditor_can_be_updated(){
+ 
+        $codeeditor = Codeeditor::factory()->create();
+        $response = $this->get(route('codeeditorApi'));
+        $response->assertStatus(200)
+          ->assertJsonCount(1);
+  
+      $response=$this->patch(route('updatecodeeditorApi', $codeeditor->id), [
+        'name'=>'Gato',
+        'statement'=>'statement',
+        'result'=>'result'      
+  ]);
+  
+      $this->assertEquals('Gato', Codeeditor::first()->name);
+   
+      }
+
 }
