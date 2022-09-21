@@ -37,4 +37,18 @@ class CodeeditorTest extends TestCase
         ->assertJsonCount(1);
 
     }
+
+    public function test_check_if_a_codeeditor_can_be_created(){
+ 
+      $response=$this->post(route('storecodeeditorApi',[
+            'name'=>'name',
+            'statement'=>'statement',
+            'result'=>'result',
+      ]));
+ 
+      $response = $this->get(route('codeeditorApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+ 
+    }
 }

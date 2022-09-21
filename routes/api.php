@@ -35,3 +35,5 @@ Route::get('/codeeditor/create', [CodeeditorController::class, 'create'])->name(
 
 Route::post('/codeeditor/store',[CodeeditorController::class, 'store'])->name('storecodeeditorApi');
 
+Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name('showcodeeditorApi');
+
