@@ -47,19 +47,14 @@ class CodeeditorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $codeeditor = Codeeditor::find($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        //
+        $codeeditor= Codeeditor::where('id', '=',$id)->update($request->all());
+        return redirect()->route('codeeditorApi');
     }
 
     
