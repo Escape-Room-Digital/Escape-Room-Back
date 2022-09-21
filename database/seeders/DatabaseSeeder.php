@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Codeeditor;
 use App\Models\Logictest;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +36,24 @@ class DatabaseSeeder extends Seeder
         'image'=>'https://demascotas.info/wp-content/uploads/2021/07/pexels-capriauto-8154117-scaled-e1625822522143.jpg',]);
       
         Logictest::factory(1)->create();
+
+
+        Codeeditor::factory()->create(
+            ['name'=>'El caracol que cayó en el pozo',
+            'statement'=>'Un caracol cayó en un pozo de 15 metros. Cada día logra subir 3 metros, pero cada noche vuelve a caer 2.',
+            
+            'result'=>'15 días',
+            
+            ]);
+    
+            Codeeditor::factory()->create(
+            ['name'=>'El tigre que cayó en el pozo',
+            'statement'=>'Un caracol cayó en un pozo de 15 metros. Cada día logra subir 3 metros, pero cada noche vuelve a caer 2.',
+            
+            'result'=>'15 días',
+            ]);
+          
+            Codeeditor::factory(1)->create();
 
     }
 }
