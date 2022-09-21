@@ -23,7 +23,6 @@ class LogictestsController extends Controller
     //   return view('createlogictest');
     // }
 
-   
     public function store(Request $request)
     {
       $request->validate([

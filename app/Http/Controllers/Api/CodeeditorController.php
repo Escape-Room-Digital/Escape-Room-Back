@@ -17,15 +17,20 @@ class CodeeditorController extends Controller
     }
 
     
-    public function create()
+   /*  public function create()
     {
-        
-    }
+        return view('createcodeeditor');
+    } */
 
     
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'statement'=>'required',
+            'result'=>'required',
+        ]); 
+      return Codeeditor::create($request->all());
     }
 
     

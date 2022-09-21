@@ -31,4 +31,7 @@ Route::get('/codeeditor', [CodeeditorController::class, 'index'])->name('codeedi
 
 Route::delete('/codeeditor/delete/{id}', [CodeeditorController::class, 'destroy'])->name('destroycodeeditorApi');
 
+Route::get('/codeeditor/create', [CodeeditorController::class, 'create'])->name('createcodeeditorApi');
+
+Route::post('/codeeditor/store',[CodeeditorController::class, 'store'])->name('storecodeeditorApi');
 
