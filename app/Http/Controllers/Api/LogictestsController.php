@@ -39,7 +39,6 @@ class LogictestsController extends Controller
    
     public function show($id)
     {
-        $logicTest = [];
         $logictest[0] = Logictest::find($id);
         return  $logictest;
     }

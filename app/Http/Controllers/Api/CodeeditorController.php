@@ -36,7 +36,8 @@ class CodeeditorController extends Controller
     
     public function show($id)
     {
-        //
+        $codeeditor[0] = Codeeditor::find($id);
+        return  $codeeditor;
     }
 
     /**

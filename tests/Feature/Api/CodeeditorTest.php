@@ -38,6 +38,21 @@ class CodeeditorTest extends TestCase
 
     }
 
+    public function test_check_if_a_codeeditor_can_be_created(){
+ 
+      $response=$this->post(route('storecodeeditorApi',[
+            'name'=>'name',
+            'statement'=>'statement',
+            'result'=>'result',
+      ]));
+ 
+      $response = $this->get(route('codeeditorApi'));
+      $response->assertStatus(200)
+        ->assertJsonCount(1);
+ 
+    }
+
+
     public function test_check_if_a_codeeditor_can_be_updated(){
  
         $codeeditor = Codeeditor::factory()->create();
@@ -54,5 +69,13 @@ class CodeeditorTest extends TestCase
       $this->assertEquals('Gato', Codeeditor::first()->name);
    
       }
+      
+    public function test_check_if_a_codeeditor_can_be_show(){
 
+    $codeeditor = Codeeditor::factory()->create();
+    $this->assertCount(1, Codeeditor::all());
+    
+    $response=$this->get(route('showcodeeditorApi', $codeeditor->id));
+        $response->assertStatus(200)->assertSee("name")->assertJsonCount(1);
+  }
 }
