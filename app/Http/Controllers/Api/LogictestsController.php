@@ -21,6 +21,7 @@ class LogictestsController extends Controller
     // public function create()
     // {
     //   return view('createlogictest');
+        
     // }
 
     public function store(Request $request)

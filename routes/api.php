@@ -43,3 +43,17 @@ Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name(
 
 //rutas de userlist:
 Route::get('/user', [UserController::class, 'index'])->name('userApi');
+
+Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('destroyuserApi');
+
+Route::get('/user/create', [UserController::class, 'create'])->name('createuserApi');
+
+Route::post('/user/store',[UserController::class, 'store'])->name('storeuserApi');
+
+Route::get('/user/edit/{id}',[UserController::class, 'edit'])->name('edituserApi');
+
+Route::patch('/user/update/{id}',[UserController::class, 'update'])->name('updateuserApi');
+
+Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi');
+
+
