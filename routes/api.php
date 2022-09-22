@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\CodeeditorController;
 use App\Http\Controllers\Api\LogictestsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\UserController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -40,3 +40,6 @@ Route::get('/codeeditor/edit/{id}',[CodeeditorController::class, 'edit'])->name(
 Route::patch('/codeeditor/update/{id}',[CodeeditorController::class, 'update'])->name('updatecodeeditorApi');
 
 Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name('showcodeeditorApi');
+
+//rutas de userlist:
+Route::get('/user', [UserController::class, 'index'])->name('userApi');

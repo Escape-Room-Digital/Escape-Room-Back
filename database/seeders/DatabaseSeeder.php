@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
           
             Codeeditor::factory(1)->create();
 
-            User::factory(1)->create();
+            User::factory(10)->create();
 
     }
 }
