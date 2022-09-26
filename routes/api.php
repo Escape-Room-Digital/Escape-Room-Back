@@ -11,6 +11,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Rutas para login sin middlewares:
+Route::post('login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
+
 //rutas de logictest:
 Route::get('/logictest', [LogictestsController::class, 'index'])->name('logictestApi');
 

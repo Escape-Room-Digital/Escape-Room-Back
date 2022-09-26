@@ -79,4 +79,37 @@ class UserController extends Controller
         $user =User::find($id);
         $user->delete();
     }
+
+public function login(Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    $user = User::where('email', '=', $request->email)->first();
+
+    if (isset($user->id)) {
+        if (Hash::check($request->password, $user->password)) {
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            return response()->json([
+                'status' =>'1',
+                'msg' => 'Estás logueado',
+                'user'=> $user,
+                'access_token'=> $token
+            ], 200);
+        }
+
+        return response()->json([
+            'status'=> 0, 
+            'msg' => 'Password incorrecto'
+        ], 404);
+    }
+
+    return response()->json([
+        'status'=> 0, 
+        'msg' => 'Usuario no registrado'
+    ], 404);
+}
+
 }

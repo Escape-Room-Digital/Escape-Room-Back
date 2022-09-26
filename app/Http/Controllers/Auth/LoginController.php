@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Symfony\Component\HttpFoundation\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -37,4 +39,30 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+protected function authenticated(Request $request, $user)
+{
+    return response()->json($user);
 }
+
+ /**
+     * The user has logged out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+        return response()->json(null);
+    }
+
+}
+
+ 
