@@ -59,7 +59,7 @@ Route::patch('/user/update/{id}',[UserController::class, 'update'])->name('updat
 Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi');
 
 //rutas auth
-Route::post('/auth/register', [AuthController::class, 'createUser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser']);
+Route::post('/auth/register', [AuthController::class, 'createUser'])->name('registerUser');
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUser');
 
 
