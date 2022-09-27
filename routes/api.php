@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CodeeditorController;
 use App\Http\Controllers\Api\LogictestsController;
 use Illuminate\Http\Request;
@@ -11,6 +12,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 //rutas de logictest:
 Route::get('/logictest', [LogictestsController::class, 'index'])->name('logictestApi');
 
@@ -55,5 +57,9 @@ Route::get('/user/edit/{id}',[UserController::class, 'edit'])->name('edituserApi
 Route::patch('/user/update/{id}',[UserController::class, 'update'])->name('updateuserApi');
 
 Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi');
+
+//rutas auth
+Route::post('/auth/register', [AuthController::class, 'createUser']);
+Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 
