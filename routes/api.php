@@ -24,7 +24,7 @@ Route::post('/logictest/store',[LogictestsController::class, 'store'])->name('st
 
 Route::get('/logictest/edit/{id}',[LogictestsController::class, 'edit'])->name('editlogictestApi');
 
-Route::patch('/logictest/update/{id}',[LogictestsController::class, 'update'])->name('updateLogictest');
+Route::put('/logictest/update/{id}',[LogictestsController::class, 'update'])->name('updateLogictest');
 
 Route::get('/logictest/show/{id}',[LogictestsController::class, 'show'])->name('showlogictestApi');
 
@@ -39,7 +39,7 @@ Route::post('/codeeditor/store',[CodeeditorController::class, 'store'])->name('s
 
 Route::get('/codeeditor/edit/{id}',[CodeeditorController::class, 'edit'])->name('editcodeeditorApi');
 
-Route::patch('/codeeditor/update/{id}',[CodeeditorController::class, 'update'])->name('updatecodeeditorApi');
+Route::put('/codeeditor/update/{id}',[CodeeditorController::class, 'update'])->name('updatecodeeditorApi');
 
 Route::get('/codeeditor/show/{id}',[CodeeditorController::class, 'show'])->name('showcodeeditorApi');
 
@@ -54,7 +54,7 @@ Route::post('/user/store',[UserController::class, 'store'])->name('storeuserApi'
 
 Route::get('/user/edit/{id}',[UserController::class, 'edit'])->name('edituserApi');
 
-Route::patch('/user/update/{id}',[UserController::class, 'update'])->name('updateuserApi');
+Route::put('/user/update/{id}',[UserController::class, 'update'])->name('updateuserApi');
 
 Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi');
 
