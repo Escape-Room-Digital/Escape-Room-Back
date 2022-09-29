@@ -69,7 +69,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return User
      */
-    public function loginUser(Request $request)
+    public function login(Request $request)
     {
         try {
             $validateUser = Validator::make($request->all(), 
@@ -108,4 +108,23 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+    public function logout()
+    {
+        $user = auth()->user();
+
+        auth()->user()->tokens()->delete();
+
+        return response()->json([
+            "status" => 1,
+            "msg" => "You are logged out",
+            "data" => $user
+        ], 200);
+    }
+
+//     public function logout()
+// {
+//     session()->flush();
+//     return response()->json("Ok");
+// }
 }

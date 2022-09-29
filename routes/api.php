@@ -68,6 +68,8 @@ Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi
 
 //rutas auth
 Route::post('/auth/register', [AuthController::class, 'createUser'])->name('registerUser');
-Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUser');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
 
+//rutas logout
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 
