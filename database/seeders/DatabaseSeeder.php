@@ -56,7 +56,26 @@ class DatabaseSeeder extends Seeder
           
             Codeeditor::factory(1)->create();
 
-            User::factory(10)->create();
+            User::factory()->create([
+              'name'=>'admin',
+              'email'=>'admin@admin.com', 
+              'isAdmin'=>true, 
+              'isSuperAdmin'=> false,
+            ]);
+            User::factory()->create([
+              'name'=>'superAdmin',
+              'email'=>'superadmin@admin.com',  
+              'isAdmin'=>true, 
+              'isSuperAdmin'=> true,
+            ]);
+             User::factory()->create([
+              'name'=>'user',
+              'email'=>'user@user.com',  
+              'isAdmin'=>false, 
+              'isSuperAdmin'=> false,
+            ]);
+
+            User::factory()->create();
 
     }
 }
