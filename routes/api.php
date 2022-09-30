@@ -71,5 +71,5 @@ Route::post('/auth/register', [AuthController::class, 'createUser'])->name('regi
 Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
 
 //rutas logout
-Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
 
