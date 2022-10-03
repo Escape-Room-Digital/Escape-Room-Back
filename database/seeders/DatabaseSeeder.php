@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Codeeditor;
+use App\Models\Escaperoom;
 use App\Models\Logictest;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -57,6 +58,8 @@ class DatabaseSeeder extends Seeder
             Codeeditor::factory(1)->create();
 
             User::factory(10)->create();
+
+            Escaperoom::factory()->create();
 
     }
 }
