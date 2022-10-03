@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CodeeditorController;
+use App\Http\Controllers\Api\EscaperoomController;
 use App\Http\Controllers\Api\LogictestsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -63,3 +64,6 @@ Route::post('/auth/register', [AuthController::class, 'createUser'])->name('regi
 Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUser');
 
 
+//pivot:
+Route:: get('/addLogicTest/{name}/{id}/', [LogictestsController::class, 'addLogicTest'])->name('addLogicTest');//->middleware('auth');
+Route:: get('/removeLogicTest/{name}/{id}', [LogictestsController::class, 'removeLogicTest'])->name('removeLogicTest');//->middleware('auth');

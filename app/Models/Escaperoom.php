@@ -13,5 +13,10 @@ class Escaperoom extends Model
         'name',
     ]; 
 
+    public function logictest() 
+    {
+        return $this->belongsToMany(LogicTest::class);
+    }
+
 
 }

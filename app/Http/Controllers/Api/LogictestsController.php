@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Escaperoom;
 use App\Models\Logictest;
 use Illuminate\Http\Request;
 
@@ -68,5 +69,27 @@ class LogictestsController extends Controller
         $logictest =Logictest::find($id);
         $logictest->delete();
 
+    }
+
+     public function addLogicTest($name, $id)
+    {
+       $logictest=LogicTest::find($id);
+       $escaperoom=Escaperoom::where('name', $name)->first();
+
+       $escaperoom->logictest()->attach($logictest);
+
+       $escaperoom->save();
+
+       return redirect()->route('logictestApi', compact('logictest'));
+    }
+
+    public function removeLogicTest($id)
+    {
+       $logistest=LogicTest::find($id);
+       $escaperoom=Escaperoom::find($id);
+
+       $logistest->escaperoom()->detach($escaperoom);
+      
+       return redirect()->route('logictestApi');
     }
 }
