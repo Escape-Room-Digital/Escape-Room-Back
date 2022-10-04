@@ -16,7 +16,9 @@ class EscaperoomController extends Controller
      */
     public function index()
     {
-        //
+        $escaperooms=Escaperoom::all();
+
+        return response()->json($escaperooms, 200);
     }
 
     /**
@@ -37,7 +39,10 @@ class EscaperoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+        ]); 
+      return Escaperoom::create($request->all());
     }
 
     /**

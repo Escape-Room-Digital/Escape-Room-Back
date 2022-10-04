@@ -71,24 +71,26 @@ class LogictestsController extends Controller
 
     }
 
-     public function addLogicTest($name, $id)
+     public function addLogicTest($id1, $id2)
     {
-       $logictest=LogicTest::find($id);
-       $escaperoom=Escaperoom::where('name', $name)->first();
+      //El id1 corresponde al id del escaperoom y el id2 al id de la prueba de logica
+       $logictest=LogicTest::find($id2);
+       $escaperoom=Escaperoom::find($id1);
+       //$escaperoom=Escaperoom::where('name', $name)->first();
 
        $escaperoom->logictest()->attach($logictest);
 
        $escaperoom->save();
 
-       return redirect()->route('logictestApi', compact('logictest'));
+       return redirect()->route('logictestApi');
     }
 
-    public function removeLogicTest($id)
+    public function removeLogicTest($id1, $id2)
     {
-       $logistest=LogicTest::find($id);
-       $escaperoom=Escaperoom::find($id);
+       $logictest=LogicTest::find($id2);
+       $escaperoom=Escaperoom::find($id1);
 
-       $logistest->escaperoom()->detach($escaperoom);
+       $escaperoom->logictest()->detach($logictest);
       
        return redirect()->route('logictestApi');
     }
