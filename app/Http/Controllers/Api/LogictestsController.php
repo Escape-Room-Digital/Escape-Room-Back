@@ -71,7 +71,7 @@ class LogictestsController extends Controller
 
     }
 
-     public function addLogicTest($id1, $id2)
+     public function addLogicTestToEscaperoom($id1, $id2)
     {
       //El id1 corresponde al id del escaperoom y el id2 al id de la prueba de logica
        $logictest=LogicTest::find($id2);
@@ -85,7 +85,7 @@ class LogictestsController extends Controller
        return redirect()->route('logictestApi');
     }
 
-    public function removeLogicTest($id1, $id2)
+    public function removeLogicTestToEscaperoom($id1, $id2)
     {
        $logictest=LogicTest::find($id2);
        $escaperoom=Escaperoom::find($id1);

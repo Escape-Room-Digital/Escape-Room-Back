@@ -65,8 +65,8 @@ Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUse
 
 
 //pivot:
-Route:: get('/addLogicTest/{id1}/{id2}', [LogictestsController::class, 'addLogicTest'])->name('addLogicTest');//->middleware('auth');
-Route:: get('/removeLogicTest/{id1}/{id2}', [LogictestsController::class, 'removeLogicTest'])->name('removeLogicTest');//->middleware('auth');
+Route:: get('/addLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::class, 'addLogicTestToEscaperoom'])->name('addLogicTestToEscaperoom');//->middleware('auth');
+Route:: get('/removeLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::class, 'removeLogicTestToEscaperoom'])->name('removeLogicTestToEscaperoom');//->middleware('auth');
 
 //Escaperoom
 Route::get('/escaperoom', [EscaperoomController::class, 'index'])->name('escaperoomApi');
