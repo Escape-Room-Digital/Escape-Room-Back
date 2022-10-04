@@ -70,4 +70,6 @@ Route:: get('/removeLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::c
 
 //Escaperoom
 Route::get('/escaperoom', [EscaperoomController::class, 'index'])->name('escaperoomApi');
-Route::post('/escaperoom/store',[EscaperoomController::class, 'store'])->name('storeEscapeRoom <div class=""></div>Api');
+Route::post('/escaperoom/store',[EscaperoomController::class, 'store'])->name('storeEscapeRoomApi');
+//LogictestInEscaperoom
+Route::get('/escaperoom/{id}', [EscaperoomController::class, 'myLogicTestsInEscapeRoom']);

@@ -90,5 +90,22 @@ class EscaperoomController extends Controller
         //
     }
 
+    public function myLogicTestsInEscapeRoom($id){
+      $logictestsInEscaperoom= Escaperoom::getLogicTestsOfEscaperoom($id);
+      return $logictestsInEscaperoom;
+    }
+
+    /* $logictest[0] = Logictest::find($id);
+        return  $logictest; */
+
+    /* public function myEventsView()
+    {
+        $eventsOfUser = User::getEventsOfUser();
+
+        $eventsOfUser = Event::getTotalUsersOfEvent($eventsOfUser);
+
+        return view('myEvents', compact('eventsOfUser'));
+    } */
+
    
 }
