@@ -63,7 +63,7 @@ class UserCrudTest extends TestCase
         $response->assertStatus(200)
           ->assertJsonCount(1);
   
-      $response=$this->patch(route('updateuserApi', $user->id), [
+      $response=$this->put(route('updateuserApi', $user->id), [
             'name'=>'Gato',
             'phone'=>'phone',
             'email'=>'email',

@@ -69,7 +69,7 @@ class LogictestCrudTest extends TestCase
     //     'image' => 'updated image'
     // ]);
 
-    $response=$this->patch(route('updateLogictest', $logictest->id), [
+    $response=$this->put(route('updateLogictest', $logictest->id), [
       'name'=>'Gato',
       'statement'=>'statement',
       'question'=>'question',

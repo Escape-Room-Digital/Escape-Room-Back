@@ -73,4 +73,4 @@ Route::get('/escaperoom', [EscaperoomController::class, 'index'])->name('escaper
 Route::post('/escaperoom/store',[EscaperoomController::class, 'store'])->name('storeEscapeRoomApi'); //para crear un escape room
 Route::delete('/escaperoom/delete/{id}', [EscaperoomController::class, 'destroy'])->name('destroyEscaperoomApi');
 //LogictestInEscaperoom
-Route::get('/escaperoom/{id}', [EscaperoomController::class, 'myLogicTestsInEscapeRoom']); //muestra las pruebas de lógica que tenemos en un escape room
+Route::get('/myLogicTestsInEscapeRoom/{id}', [EscaperoomController::class, 'myLogicTestsInEscapeRoom'])->name('myLogicTestsInEscapeRoom'); //muestra las pruebas de lógica que tenemos en un escape room

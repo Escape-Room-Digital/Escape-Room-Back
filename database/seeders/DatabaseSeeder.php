@@ -58,6 +58,7 @@ class DatabaseSeeder extends Seeder
             Codeeditor::factory(1)->create();
 
             User::factory(10)->create();
+
             Escaperoom::factory(['name'=>'EscapeRoom1',
             ])->create();
             Escaperoom::factory()->create();
