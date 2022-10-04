@@ -87,7 +87,11 @@ class EscaperoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $logicTestsOfEscaperoom = [];
+        $escaperoom = Escaperoom::find($id);
+        $logicTestsOfEscaperoom = $escaperoom->logictest;
+      $escaperoom->logictest()->detach($logicTestsOfEscaperoom);
+        $escaperoom->delete();
     }
 
     public function myLogicTestsInEscapeRoom($id){
