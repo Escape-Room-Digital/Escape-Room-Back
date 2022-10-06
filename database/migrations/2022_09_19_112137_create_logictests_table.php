@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('statement');
             $table->string('question');
-            $table->string('result');
+            $table->boolean('result')->default(false);
             $table->string('clue');
             $table->string('image');
             $table->timestamps();
