@@ -53,7 +53,8 @@ class EscaperoomController extends Controller
      */
     public function show($id)
     {
-        //
+        $escaperoom[0] = Escaperoom::find($id);
+        return  $escaperoom;
     }
 
     /**
