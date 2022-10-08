@@ -65,7 +65,7 @@ Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUse
 
 
 //pivot:
-Route:: get('/addLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::class, 'addLogicTestToEscaperoom'])->name('addLogicTestToEscaperoom');//->middleware('auth'); //para añadir pruebas de lógica a un escape room
+Route:: get('/addLogicTestToEscaperoom/{id1}/{idList}', [LogictestsController::class, 'addLogicTestToEscaperoom'])->name('addLogicTestToEscaperoom');//->middleware('auth'); //para añadir pruebas de lógica a un escape room
 Route:: get('/removeLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::class, 'removeLogicTestToEscaperoom'])->name('removeLogicTestToEscaperoom');//->middleware('auth'); //para quitar de un escape room una prueba de lógica
 
 //Escaperoom

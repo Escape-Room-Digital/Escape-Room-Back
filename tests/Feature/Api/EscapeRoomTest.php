@@ -57,7 +57,7 @@ class EscapeRoomTest extends TestCase
           ->assertJsonCount(1);
    
       }
-      public function test_check_If_LogicTest_Are_Listed_In_EscapeRoom(){
+    /*   public function test_check_If_LogicTest_Are_Listed_In_EscapeRoom(){
 
         Logictest::factory(1)->create();
 
@@ -94,6 +94,6 @@ class EscapeRoomTest extends TestCase
         // $response = $this->get(route('inscribeEvent', $event->id));
         // $this->assertEquals($eventPlaces +1, Event::first()->sub_people);
   
-      }
+      } */
 
 }
