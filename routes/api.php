@@ -62,4 +62,6 @@ Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi
 Route::post('/auth/register', [AuthController::class, 'createUser'])->name('registerUser');
 Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUser');
 
+Route::get('/export/users', [\App\Http\Controllers\ExcelController::class,'UserExport'])->name('exportUser');
+
 
