@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('promo');
-            $table->string('solution');
-            $table->string('testdone');
+            $table->string('solution')->nullable();
+            $table->boolean('testdone')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
