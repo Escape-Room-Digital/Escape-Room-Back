@@ -36,11 +36,11 @@ class DatabaseSeeder extends Seeder
         'image'=>'https://st.depositphotos.com/2166845/4807/i/600/depositphotos_48073787-stock-photo-three-dogs.jpg',]);
 
         Logictest::factory()->create(
-        ['name'=>'Los tres perros',
-        'statement'=>'RKingston Mall tiene más tiendas que Galleria. El centro comercial Four Corners tiene menos tiendas que Galleria. El Kingston Mall tiene más tiendas que el Four Corners Mall.',
+        ['name'=>'Los centros comerciales',
+        'statement'=>'Kingston Mall tiene más tiendas que Galleria. El centro comercial Four Corners tiene menos tiendas que Galleria. El Kingston Mall tiene más tiendas que el Four Corners Mall.',
         'question'=>'Si las dos primeras afirmaciones son verdaderas, la tercera afirmación es',
         'clue'=>'De las dos primeras afirmaciones, sabe que Kingston Mall tiene la mayor cantidad de tiendas, por lo que Kingston Mall tendría más tiendas que Four Corners Mall.',
-        'image'=>'https://st.depositphotos.com/2166845/4807/i/600/depositphotos_48073787-stock-photo-three-dogs.jpg',]);
+        'image'=>'https://www.miradormadrid.com/wp-content/uploads/2020/01/Centros-Comerciales-2.jpg',]);
       
         Logictest::factory(0)->create();
 
