@@ -20,7 +20,6 @@ class LogictestFactory extends Factory
         'name'=>$this->faker->company(),
         'statement'=>$this->faker->company(),
         'question'=>$this->faker->company(),
-        'result'=>$this->faker->company(),
         'clue'=>$this->faker->company(),
         'image'=>$this->faker->company(),
         ];
