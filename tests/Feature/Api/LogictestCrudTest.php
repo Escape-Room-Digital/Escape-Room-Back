@@ -44,7 +44,8 @@ class LogictestCrudTest extends TestCase
             'name'=>'name',
             'statement'=>'statement',
             'question'=>'question',
-            'result'=>'result',
+            'correct'=> 'correct',    
+            'incorrect'=> 'false',
             'clue'=>'clue',
             'image'=> 'image',
       ]));
@@ -69,11 +70,12 @@ class LogictestCrudTest extends TestCase
     //     'image' => 'updated image'
     // ]);
 
-    $response=$this->patch(route('updateLogictest', $logictest->id), [
+    $response=$this->put(route('updateLogictest', $logictest->id), [
       'name'=>'Gato',
       'statement'=>'statement',
       'question'=>'question',
-      'result'=>'result',
+      'correct'=> 'correct',    
+      'incorrect'=> 'false',
       'clue'=>'clue',
       'image'=> 'image',
 ]);

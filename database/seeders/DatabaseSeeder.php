@@ -24,20 +24,31 @@ class DatabaseSeeder extends Seeder
        Logictest::factory()->create(
         ['name'=>'El caracol que cayó en el pozo',
         'statement'=>'Un caracol cayó en un pozo de 15 metros. Cada día logra subir 3 metros, pero cada noche vuelve a caer 2.',
-        'question'=>'¿Cuánto tiempo demorará el caracol en salir del pozo?',
-        'result'=>'15 días',
+        'question'=>'El Caracol saldrá del pozo en 15 días. ¿Verdadero o Falso?',
+        'correct'=>'1',
+        'incorrect'=>'0',
         'clue'=>'¿cuantos metros sube por dia?',
         'image'=>'https://demascotas.info/wp-content/uploads/2021/07/pexels-capriauto-8154117-scaled-e1625822522143.jpg',]);
 
         Logictest::factory()->create(
-        ['name'=>'El tigre que cayó en el pozo',
-        'statement'=>'Un caracol cayó en un pozo de 15 metros. Cada día logra subir 3 metros, pero cada noche vuelve a caer 2.',
-        'question'=>'¿Cuánto tiempo demorará el caracol en salir del pozo?',
-        'result'=>'15 días',
-        'clue'=>'¿cuantos metros sube por dia?',
-        'image'=>'https://demascotas.info/wp-content/uploads/2021/07/pexels-capriauto-8154117-scaled-e1625822522143.jpg',]);
+        ['name'=>'Los tres perros',
+        'statement'=>'Rover pesa menos que Fido. Rover pesa más que Boomer. De los tres perros, Boomer es el que menos pesa.',
+        'question'=>'Si las dos primeras afirmaciones son verdaderas, la tercera afirmación es',
+        'correct'=>'1',
+        'incorrect'=>'0',
+        'clue'=>'Fido pesa mas que los otros dos perros',
+        'image'=>'https://st.depositphotos.com/2166845/4807/i/600/depositphotos_48073787-stock-photo-three-dogs.jpg',]);
+
+        Logictest::factory()->create(
+        ['name'=>'Los centros comerciales',
+        'statement'=>'Kingston Mall tiene más tiendas que Galleria. El centro comercial Four Corners tiene menos tiendas que Galleria. El Kingston Mall tiene más tiendas que el Four Corners Mall.',
+        'question'=>'Si las dos primeras afirmaciones son verdaderas, la tercera afirmación es',
+        'correct'=>'1',
+        'incorrect'=>'0',
+        'clue'=>'De las dos primeras afirmaciones, sabe que Kingston Mall tiene la mayor cantidad de tiendas, por lo que Kingston Mall tendría más tiendas que Four Corners Mall.',
+        'image'=>'https://www.miradormadrid.com/wp-content/uploads/2020/01/Centros-Comerciales-2.jpg',]);
       
-        Logictest::factory(1)->create();
+        Logictest::factory(0)->create();
 
 
         Codeeditor::factory()->create(
@@ -59,6 +70,8 @@ class DatabaseSeeder extends Seeder
 
             User::factory(10)->create();
 
+            Escaperoom::factory(['name'=>'EscapeRoom1',
+            ])->create();
             Escaperoom::factory()->create();
 
     }

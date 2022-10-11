@@ -16,4 +16,9 @@ class Logictest extends Model
         'clue',
         'image',
     ]; 
+
+    public function escaperoom() {
+        return $this->belongsToMany(Escaperoom::class);
+    }
+
 }

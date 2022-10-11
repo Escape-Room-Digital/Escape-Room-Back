@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('logictests', function (Blueprint $table) {
+        Schema::create('escaperoom_logictest', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('statement');
-            $table->string('question');
-            $table->boolean('correct')->default(true);
-            $table->boolean('incorrect')->default(false);
-            $table->string('clue');
-            $table->string('image');
+            $table->unsignedBigInteger('logictest_id');
+            $table->foreign('logictest_id')->references('id')->on('logictests');
+            $table->unsignedBigInteger('escaperoom_id');
+            $table->foreign('escaperoom_id')->references('id')->on('escaperooms');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logictests');
+        Schema::dropIfExists('escaperoom_logictest');
     }
 };

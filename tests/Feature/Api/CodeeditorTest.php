@@ -60,7 +60,7 @@ class CodeeditorTest extends TestCase
         $response->assertStatus(200)
           ->assertJsonCount(1);
   
-      $response=$this->patch(route('updatecodeeditorApi', $codeeditor->id), [
+      $response=$this->put(route('updatecodeeditorApi', $codeeditor->id), [
         'name'=>'Gato',
         'statement'=>'statement',
         'result'=>'result'      

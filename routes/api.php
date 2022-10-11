@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CodeeditorController;
+use App\Http\Controllers\Api\EscaperoomController;
 use App\Http\Controllers\Api\LogictestsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -69,3 +70,15 @@ Route::get('/export/users', [\App\Http\Controllers\ExcelController::class,'UserE
 Route::get('/import/users', [App\Http\Controllers\ExcelController::class, 'UserImport']);
 
 
+//pivot:
+Route:: get('/addLogicTestToEscaperoom/{id1}/{idList}', [LogictestsController::class, 'addLogicTestToEscaperoom'])->name('addLogicTestToEscaperoom');//->middleware('auth'); //para añadir pruebas de lógica a un escape room
+Route:: get('/removeLogicTestToEscaperoom/{id1}/{id2}', [LogictestsController::class, 'removeLogicTestToEscaperoom'])->name('removeLogicTestToEscaperoom');//->middleware('auth'); //para quitar de un escape room una prueba de lógica
+
+//Escaperoom
+Route::get('/escaperoom', [EscaperoomController::class, 'index'])->name('escaperoomApi'); //muestra los escape roome que tenemos
+Route::get('/escaperoom/{id}',[EscaperoomController::class, 'show'])->name('showEscaperoomApi');
+Route::post('/escaperoom/store',[EscaperoomController::class, 'store'])->name('storeEscapeRoomApi'); //para crear un escape room
+Route::delete('/escaperoom/delete/{id}', [EscaperoomController::class, 'destroy'])->name('destroyEscaperoomApi');
+
+//LogictestInEscaperoom
+Route::get('/myLogicTestsInEscapeRoom/{id}', [EscaperoomController::class, 'myLogicTestsInEscapeRoom'])->name('myLogicTestsInEscapeRoom'); //muestra las pruebas de lógica que tenemos en un escape room
