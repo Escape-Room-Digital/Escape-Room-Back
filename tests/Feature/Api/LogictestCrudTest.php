@@ -44,7 +44,8 @@ class LogictestCrudTest extends TestCase
             'name'=>'name',
             'statement'=>'statement',
             'question'=>'question',
-            'result'=>'result',
+            'correct'=> 'correct',    
+            'incorrect'=> 'false',
             'clue'=>'clue',
             'image'=> 'image',
       ]));
@@ -73,7 +74,8 @@ class LogictestCrudTest extends TestCase
       'name'=>'Gato',
       'statement'=>'statement',
       'question'=>'question',
-      'result'=>'result',
+      'correct'=> 'correct',    
+      'incorrect'=> 'false',
       'clue'=>'clue',
       'image'=> 'image',
 ]);
