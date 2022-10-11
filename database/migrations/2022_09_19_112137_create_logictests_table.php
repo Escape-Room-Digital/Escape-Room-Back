@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('statement');
             $table->string('question');
-            $table->integer('correct');
-            $table->integer('incorrect');
+            $table->boolean('correct')->default(true);
+            $table->boolean('incorrect')->default(false);
             $table->string('clue');
             $table->string('image');
             $table->timestamps();

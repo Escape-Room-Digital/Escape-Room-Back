@@ -31,7 +31,8 @@ class LogictestsController extends Controller
             'name'=>'required',
             'statement'=>'required',
             'question'=>'required',
-            'result'=>'required',
+            'correct'=> 'required',    
+            'incorrect'=> 'required',
             'clue'=>'required',
             'image'=> 'required',
         ]); 
