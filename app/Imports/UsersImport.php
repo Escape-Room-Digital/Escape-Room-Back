@@ -19,10 +19,17 @@ class UsersImport implements ToCollection
                 $ok = User::create([
                     'name' => $row[0],
                     'phone' => $row[1],
-                    'email'      => $row[2],
-                    'promo'  => $row[3],
+                    'email' => $row[2],
+                    'promo' => $row[3],
+                    'solution' => $row[4],
+                    'testdone' => $row[5],
+                    'password' => $row[6],
                 ]);
             }
         } 
+    }
+    public function chunkSize(): int
+    {
+        return 1000;
     }
 }

@@ -62,6 +62,10 @@ Route::get('/user/show/{id}',[UserController::class, 'show'])->name('showuserApi
 Route::post('/auth/register', [AuthController::class, 'createUser'])->name('registerUser');
 Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('loginUser');
 
+//ruta para exportar mi tabla de usuario
 Route::get('/export/users', [\App\Http\Controllers\ExcelController::class,'UserExport'])->name('exportUser');
+
+//ruta para importar mi csv de usuarios
+Route::get('/import/users', [App\Http\Controllers\ExcelController::class, 'UserImport']);
 
 
