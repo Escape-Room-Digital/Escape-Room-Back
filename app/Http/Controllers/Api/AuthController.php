@@ -12,11 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
 
-    /**
-     * Create User
-     * @param Request $request
-     * @return User 
-     */
+    
     public function createUser(Request $request)
     {
         try {
@@ -64,11 +60,6 @@ class AuthController extends Controller
         }
     }
 
-    /**
-     * Login The User
-     * @param Request $request
-     * @return User
-     */
     public function loginUser(Request $request)
     {
         try {

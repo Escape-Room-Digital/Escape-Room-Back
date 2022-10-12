@@ -18,12 +18,6 @@ class LogictestsController extends Controller
         return response()->json($logictests, 200);
     }
 
-    
-    // public function create()
-    // {
-    //   return view('createlogictest');
-        
-    // }
 
     public function store(Request $request)
     {
@@ -50,8 +44,7 @@ class LogictestsController extends Controller
     public function edit($id)
     {
         $logictest = Logictest::find($id);
-        
-        /*  return view('editLogictest',compact('logictest')); */
+ 
     }
 
     
@@ -74,8 +67,6 @@ class LogictestsController extends Controller
 
      public function addLogicTestToEscaperoom($id1, $idList)
     {
-      //El id1 corresponde al id del escaperoom y el id2 al id de la prueba de logic
-       //$escaperoom=Escaperoom::where('name', $name)->first();
        $separator = ',';
        $id2 = explode($separator, $idList);
       $max= count($id2);

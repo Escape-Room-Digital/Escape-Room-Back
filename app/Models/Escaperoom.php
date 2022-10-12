@@ -24,22 +24,5 @@ class Escaperoom extends Model
         $logicTestsOfEscaperoom = $escaperoom->logictest;
         return $logicTestsOfEscaperoom;
     }
-    /* static function getEventsOfUser() {
-        $eventsOfUser = [];
-        if (Auth::user()) {
-            $user = Auth::user();
-            $eventsOfUser = $user->event;
-        }
-        return $eventsOfUser;
-    }
-
-    public function eventsSubscribe()
-    {
-        $user = User::find(Auth::id());
-        $user->event();
-        return view('eventssubscribe', compact('user'));
-    }
-
-
- */
+ 
 }

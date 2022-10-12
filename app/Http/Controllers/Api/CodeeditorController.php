@@ -15,13 +15,6 @@ class CodeeditorController extends Controller
 
         return response()->json($codeeditors, 200);
     }
-
-    
-   /*  public function create()
-    {
-        return view('createcodeeditor');
-    } */
-
     
     public function store(Request $request)
     {
@@ -40,12 +33,7 @@ class CodeeditorController extends Controller
         return  $codeeditor;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $codeeditor = Codeeditor::find($id);

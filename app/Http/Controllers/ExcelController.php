@@ -15,6 +15,7 @@ class ExcelController extends Controller
 
     public function UserImport() 
     {
+      //Aca se colocara el nombre del archivo donde estaran los usuarios que deseas subir, importante guardar ese archivo en la carpeta public.
         Excel::import(new UsersImport, 'candidatos.csv');              
     }
 }

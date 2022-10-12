@@ -17,12 +17,6 @@ class UserController extends Controller
     }
 
     
-   /*  public function create()
-    {
-        return view('createuser');
-    } */
-
-    
     public function store(Request $request)
     {
         $request->validate([
@@ -49,8 +43,6 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
-        /* return view('usertest',compact('user')); */
     }
 
 
@@ -58,19 +50,6 @@ class UserController extends Controller
     {
         $user= User::where('id', '=',$id)->update($request->all());
         return redirect()->route('userApi');
-        /* $user = User::find($id);
-
-        $user->name= $request->name;
-        $user->phone= $request->phone;
-        $user->email= $request->email;
-        $user->promo= $request->promo;
-        $user->solution= $request->solution;
-        $user->testdone= $request->testdone;
-        
-
-        $user->save();
-
-        return redirect()->route('userApi'); */
 
     } 
 
